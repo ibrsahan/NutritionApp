@@ -1,0 +1,788 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="fill_parent"
+    android:layout_width="fill_parent"
+    android:fillViewport="true"
+    >
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:context=".CalorieCalculator"
+        android:paddingTop="5dp"
+        >
+
+
+        <GridLayout
+            android:id="@+id/gridLayout2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="4dp"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="MissingConstraints">
+
+
+            <TextView
+                android:id="@+id/header1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_row="0"
+                android:layout_column="0"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="20dp"
+                android:text="Alınan Kalori"
+                android:textColor="#3C3838"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_column="0"
+                app:layout_row="0" />
+
+            <TextView
+                android:id="@+id/explanation1"
+                android:layout_width="163dp"
+                android:layout_height="92dp"
+                android:layout_row="1"
+                android:layout_column="0"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:text="Girdiğiniz kilo, boy, yaş, cinsiyet ve aktivite seviyesi bilgilerine göre günlük almanız gereken kalori miktarı:"
+                app:layout_column="0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_row="1" />
+
+            <ImageView
+                android:id="@+id/imageView5"
+                android:layout_width="150dp"
+                android:layout_height="100dp"
+                android:layout_row="0"
+                android:layout_rowSpan="0"
+                android:layout_column="1"
+                android:layout_marginLeft="50dp"
+                android:layout_marginTop="20dp"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/kcal2" />
+
+            <TextView
+                android:id="@+id/textViewNeededCalorie"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_row="2"
+                android:layout_column="0"
+                android:layout_marginLeft="16dp"
+                android:text=""
+                android:textColor="#F7664F"
+                android:textSize="16sp"
+                android:textStyle="bold|italic"
+                />
+
+
+        </GridLayout>
+
+        <androidx.gridlayout.widget.GridLayout
+            android:id="@+id/gridLayout3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.401"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/gridLayout2"
+            tools:ignore="MissingConstraints">
+
+            <TextView
+                android:id="@+id/textViewSoap"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-condensed"
+                android:text="Çorba"
+                android:textColor="#373232"
+                android:textSize="17sp"
+                android:textStyle="bold"
+                app:layout_column="0"
+                app:layout_row="0" />
+
+
+            <Button
+                android:id="@+id/buttonTarhanaPlus"
+                android:layout_width="38dp"
+                android:layout_height="45dp"
+                android:onClick="piecePlusSoap"
+                android:layout_marginLeft="160dp"
+                android:text="+"
+                app:cornerRadius="30dp"
+                app:layout_column="0"
+                app:layout_row="1" />
+
+            <Button
+                android:id="@+id/buttonTarhanaMinus"
+                android:layout_width="38dp"
+                android:layout_height="45dp"
+                android:layout_marginLeft="200dp"
+                android:onClick="pieceMinusSoap"
+                android:text="-"
+                app:cornerRadius="30dp"
+                app:layout_column="0"
+                app:layout_row="1"
+                />
+
+            <Spinner
+                android:id="@+id/spinnerSoap"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="-5dp"
+                android:textAlignment="viewStart"
+                app:layout_column="0"
+                app:layout_row="1"
+                tools:ignore="MissingConstraints" />
+
+
+            <TextView
+                android:id="@+id/textViewSoapCal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text=""
+                android:textSize="12dp"
+                android:layout_marginLeft="9dp"
+                android:textStyle="italic"
+                app:layout_column="0"
+                app:layout_row="1" />
+
+
+            <TextView
+                android:id="@+id/textViewTarhanaPiece"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:text=""
+                android:textColor="#716B6B"
+                android:textStyle="bold|italic"
+                app:layout_column="1"
+                app:layout_row="1" />
+
+            <TextView
+                android:id="@+id/textViewSoapPortion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:text="Porsiyon"
+                android:textColor="#716B6B"
+                android:textStyle="bold|italic"
+                app:layout_column="2"
+                app:layout_row="1" />
+
+            <!--        <Button-->
+            <!--            android:id="@+id/buttonLentilPlus"-->
+            <!--            android:layout_width="38dp"-->
+            <!--            android:layout_height="wrap_content"-->
+            <!--            android:onClick="piecePlusLentil"-->
+            <!--            android:text="+"-->
+            <!--            android:textAlignment="gravity"-->
+            <!--            app:cornerRadius="30dp"-->
+            <!--            app:layout_column="0"-->
+            <!--            app:layout_row="2" />-->
+
+            <!--        <Button-->
+            <!--            android:id="@+id/buttonLentilMinus"-->
+            <!--            android:layout_width="38dp"-->
+            <!--            android:layout_height="45dp"-->
+            <!--            android:layout_marginLeft="40dp"-->
+            <!--            android:onClick="pieceMinusLentil"-->
+            <!--            android:text="-"-->
+            <!--            app:cornerRadius="30dp"-->
+            <!--            app:layout_column="0"-->
+            <!--            app:layout_row="2" />-->
+
+            <!--        <TextView-->
+            <!--            android:id="@+id/textViewLentil"-->
+            <!--            android:layout_width="wrap_content"-->
+            <!--            android:layout_height="wrap_content"-->
+            <!--            android:layout_marginLeft="85dp"-->
+            <!--            android:layout_marginTop="-5dp"-->
+            <!--            android:text="Mercimek"-->
+            <!--            android:textColor="#3C3B3B"-->
+            <!--            android:textStyle="bold"-->
+            <!--            app:layout_column="0"-->
+            <!--            app:layout_row="2" />-->
+
+            <!--        <TextView-->
+            <!--            android:id="@+id/textViewLentilCal"-->
+            <!--            android:layout_width="wrap_content"-->
+            <!--            android:layout_height="wrap_content"-->
+            <!--            android:layout_marginLeft="85dp"-->
+            <!--            android:layout_marginTop="10dp"-->
+            <!--            android:text="164 Kalori"-->
+            <!--            android:textSize="11dp"-->
+            <!--            android:textStyle="italic"-->
+            <!--            app:layout_column="0"-->
+            <!--            app:layout_row="2" />-->
+
+            <!--        <TextView-->
+            <!--            android:id="@+id/textViewLentilPiece"-->
+            <!--            android:layout_width="wrap_content"-->
+            <!--            android:layout_height="wrap_content"-->
+            <!--            android:layout_marginLeft="8dp"-->
+            <!--            android:text=""-->
+            <!--            android:textColor="#716B6B"-->
+            <!--            android:textStyle="bold|italic"-->
+            <!--            app:layout_column="1"-->
+            <!--            app:layout_row="2" />-->
+
+            <TextView
+                android:id="@+id/textViewMainCourse"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-condensed"
+                android:text="Ana Yemek"
+                android:textColor="#373232"
+                android:textSize="17sp"
+                android:textStyle="bold"
+                app:layout_column="0"
+                app:layout_row="2"
+                android:paddingTop="10dp"
+
+                />
+
+            <Button
+                android:id="@+id/buttonChickenSautePlus"
+                android:layout_width="38dp"
+                android:layout_height="wrap_content"
+                android:onClick="piecePlusMainCourse"
+                android:text="+"
+                android:layout_marginLeft="160dp"
+                android:textAlignment="gravity"
+                app:cornerRadius="30dp"
+                app:layout_column="0"
+                app:layout_row="3" />
+
+            <Button
+                android:id="@+id/buttonChickenSauteMinus"
+                android:layout_width="38dp"
+                android:layout_height="45dp"
+                android:layout_marginLeft="200dp"
+                android:onClick="pieceMinusMainCourse"
+                android:text="-"
+                app:cornerRadius="30dp"
+                app:layout_column="0"
+                app:layout_row="3" />
+
+            <Spinner
+                android:id="@+id/spinnerMainCourse"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="-5dp"
+                android:textAlignment="viewStart"
+                app:layout_column="0"
+                app:layout_row="3"
+                tools:ignore="MissingConstraints" />
+
+            <TextView
+                android:id="@+id/textViewMainCourseCal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="9dp"
+                android:layout_marginTop="15dp"
+                android:text=""
+                android:textSize="12dp"
+                android:textStyle="italic"
+                app:layout_column="0"
+                app:layout_row="3" />
+
+            <TextView
+                android:id="@+id/textViewChickenSautePiece"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:text=""
+                android:textColor="#716B6B"
+                android:textStyle="bold|italic"
+                app:layout_column="1"
+                app:layout_row="3" />
+
+            <TextView
+                android:id="@+id/textMainCoursePortion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:text="Porsiyon"
+                android:textColor="#716B6B"
+                android:textStyle="bold|italic"
+                app:layout_column="2"
+                app:layout_row="3" />
+
+            <!--        <Button-->
+            <!--            android:id="@+id/buttonPastyPlus"-->
+            <!--            android:layout_width="38dp"-->
+            <!--            android:layout_height="wrap_content"-->
+            <!--            android:layout_marginLeft="32dp"-->
+            <!--            android:onClick="piecePlusPasty"-->
+            <!--            android:text="+"-->
+            <!--            android:textAlignment="gravity"-->
+            <!--            app:cornerRadius="30dp"-->
+            <!--            app:layout_column="1"-->
+            <!--            app:layout_row="2" />-->
+
+            <!--        <Button-->
+            <!--            android:id="@+id/buttonPastyMinus"-->
+            <!--            android:layout_width="38dp"-->
+            <!--            android:layout_height="45dp"-->
+            <!--            android:layout_marginLeft="72dp"-->
+            <!--            android:onClick="pieceMinusPasty"-->
+            <!--            android:text="-"-->
+            <!--            app:cornerRadius="30dp"-->
+            <!--            app:layout_column="1"-->
+            <!--            app:layout_row="2" />-->
+
+            <!--        <TextView-->
+            <!--            android:id="@+id/textViewPasty"-->
+            <!--            android:layout_width="wrap_content"-->
+            <!--            android:layout_height="wrap_content"-->
+            <!--            android:layout_marginLeft="115dp"-->
+            <!--            android:layout_marginTop="-5dp"-->
+            <!--            android:text="Mantı"-->
+            <!--            android:textColor="#3C3B3B"-->
+            <!--            android:textStyle="bold"-->
+            <!--            app:layout_column="1"-->
+            <!--            app:layout_row="2" />-->
+
+            <!--        <TextView-->
+            <!--            android:id="@+id/textViewPastyCal"-->
+            <!--            android:layout_width="wrap_content"-->
+            <!--            android:layout_height="wrap_content"-->
+            <!--            android:layout_marginLeft="115dp"-->
+            <!--            android:layout_marginTop="10dp"-->
+            <!--            android:text="322 Kalori"-->
+            <!--            android:textSize="11dp"-->
+            <!--            android:textStyle="italic"-->
+            <!--            app:layout_column="1"-->
+            <!--            app:layout_row="2" />-->
+
+            <!--        <TextView-->
+            <!--            android:id="@+id/textViewPastyPiece"-->
+            <!--            android:layout_width="wrap_content"-->
+            <!--            android:layout_height="wrap_content"-->
+            <!--            android:layout_marginLeft="8dp"-->
+            <!--            android:text=""-->
+            <!--            android:textColor="#716B6B"-->
+            <!--            android:textStyle="bold|italic"-->
+            <!--            app:layout_column="2"-->
+            <!--            app:layout_row="2" />-->
+
+            <TextView
+                android:id="@+id/textViewDessert"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-condensed"
+                android:text="Tatlı"
+                android:paddingTop="10dp"
+                android:textColor="#373232"
+                android:textSize="17sp"
+                android:textStyle="bold"
+                app:layout_column="0"
+                app:layout_row="4" />
+
+
+            <Button
+                android:id="@+id/buttonRingDessertPlus"
+                android:layout_width="38dp"
+                android:layout_height="45dp"
+                android:onClick="piecePlusDessert"
+                android:text="+"
+                android:layout_marginLeft="160dp"
+                app:cornerRadius="30dp"
+                app:layout_column="0"
+                app:layout_row="5" />
+
+            <Button
+                android:id="@+id/buttonRingDessertMinus"
+                android:layout_width="38dp"
+                android:layout_height="45dp"
+                android:layout_marginLeft="200dp"
+                android:onClick="pieceMinusDessert"
+                android:text="-"
+                app:cornerRadius="30dp"
+                app:layout_column="0"
+                app:layout_row="5" />
+
+            <Spinner
+                android:id="@+id/spinnerDessert"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="-5dp"
+                android:textAlignment="viewStart"
+                app:layout_column="0"
+                app:layout_row="5"
+                tools:ignore="MissingConstraints" />
+
+            <TextView
+                android:id="@+id/textViewDessertCal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="9dp"
+                android:layout_marginTop="10dp"
+                android:text=""
+                android:textSize="12dp"
+                android:textStyle="italic"
+                app:layout_column="0"
+                app:layout_row="5" />
+
+            <TextView
+                android:id="@+id/textViewRingDessertPiece"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:text=""
+                android:textColor="#716B6B"
+                android:textStyle="bold|italic"
+                app:layout_column="1"
+                app:layout_row="5" />
+
+            <TextView
+                android:id="@+id/textDessertPortion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:text="Porsiyon"
+                android:textColor="#716B6B"
+                android:textStyle="bold|italic"
+                app:layout_column="2"
+                app:layout_row="5" />
+
+            <!--        <Button-->
+            <!--            android:id="@+id/buttonProfiterolesPlus"-->
+            <!--            android:layout_width="38dp"-->
+            <!--            android:layout_height="wrap_content"-->
+            <!--            android:onClick="piecePlusProfiteroles"-->
+            <!--            android:text="+"-->
+            <!--            android:textAlignment="gravity"-->
+            <!--            app:cornerRadius="30dp"-->
+            <!--            app:layout_column="0"-->
+            <!--            app:layout_row="5" />-->
+
+            <!--        <Button-->
+            <!--            android:id="@+id/buttonProfiterolesMinus"-->
+            <!--            android:layout_width="38dp"-->
+            <!--            android:layout_height="45dp"-->
+            <!--            android:layout_marginLeft="40dp"-->
+            <!--            android:onClick="pieceMinusProfiteroles"-->
+            <!--            android:text="-"-->
+            <!--            app:cornerRadius="30dp"-->
+            <!--            app:layout_column="0"-->
+            <!--            app:layout_row="5" />-->
+
+            <!--        <TextView-->
+            <!--            android:id="@+id/textViewProfiteroles"-->
+            <!--            android:layout_width="wrap_content"-->
+            <!--            android:layout_height="wrap_content"-->
+            <!--            android:layout_marginLeft="85dp"-->
+            <!--            android:layout_marginTop="-5dp"-->
+            <!--            android:text="Profiterol"-->
+            <!--            android:textColor="#3C3B3B"-->
+            <!--            android:textStyle="bold"-->
+            <!--            app:layout_column="0"-->
+            <!--            app:layout_row="5" />-->
+
+            <!--        <TextView-->
+            <!--            android:id="@+id/textViewProfiterolesCal"-->
+            <!--            android:layout_width="wrap_content"-->
+            <!--            android:layout_height="wrap_content"-->
+            <!--            android:layout_marginLeft="85dp"-->
+            <!--            android:layout_marginTop="10dp"-->
+            <!--            android:text="429 Kalori"-->
+            <!--            android:textSize="11dp"-->
+            <!--            android:textStyle="italic"-->
+            <!--            app:layout_column="0"-->
+            <!--            app:layout_row="5" />-->
+
+            <!--        <TextView-->
+            <!--            android:id="@+id/textViewProfiterolesPiece"-->
+            <!--            android:layout_width="wrap_content"-->
+            <!--            android:layout_height="wrap_content"-->
+            <!--            android:layout_marginLeft="8dp"-->
+            <!--            android:text=""-->
+            <!--            android:textColor="#716B6B"-->
+            <!--            android:textStyle="bold|italic"-->
+            <!--            app:layout_column="1"-->
+            <!--            app:layout_row="5" />-->
+
+            <TextView
+                android:id="@+id/textViewExtra"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="10dp"
+                android:fontFamily="sans-serif-condensed"
+                android:text="İçecek"
+                android:textColor="#373232"
+                android:textSize="17sp"
+                android:textStyle="bold"
+                app:layout_column="0"
+                app:layout_row="6"
+
+                />
+
+            <Button
+                android:id="@+id/buttonRicePlus"
+                android:layout_width="38dp"
+                android:layout_height="wrap_content"
+                android:onClick="piecePlusDrink"
+                android:text="+"
+                android:textAlignment="gravity"
+                android:layout_marginLeft="160dp"
+                app:cornerRadius="30dp"
+                app:layout_column="0"
+                app:layout_row="7" />
+
+            <Button
+                android:id="@+id/buttonRiceMinus"
+                android:layout_width="38dp"
+                android:layout_height="45dp"
+                android:layout_marginLeft="200dp"
+                android:onClick="pieceMinusDrink"
+                android:text="-"
+                app:cornerRadius="30dp"
+                app:layout_column="0"
+                app:layout_row="7" />
+
+            <Spinner
+                android:id="@+id/spinnerDrink"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="-5dp"
+                android:textAlignment="viewStart"
+                app:layout_column="0"
+                app:layout_row="7"
+                tools:ignore="MissingConstraints" />
+
+            <TextView
+                android:id="@+id/textViewDrinkCal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="9dp"
+                android:layout_marginTop="15dp"
+                android:text=""
+                android:textSize="12dp"
+                android:textStyle="italic"
+                app:layout_column="0"
+                app:layout_row="7" />
+
+            <TextView
+                android:id="@+id/textViewRicePiece"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:text=""
+                android:textColor="#716B6B"
+                android:textStyle="bold|italic"
+                app:layout_column="1"
+                app:layout_row="7" />
+
+            <TextView
+                android:id="@+id/textDrinkPortion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:text="Bardak"
+                android:textColor="#716B6B"
+                android:textStyle="bold|italic"
+                app:layout_column="2"
+                app:layout_row="7" />
+
+            <!--        <Button-->
+            <!--            android:id="@+id/buttonBreadPlus"-->
+            <!--            android:layout_width="38dp"-->
+            <!--            android:layout_height="wrap_content"-->
+            <!--            android:layout_marginLeft="32dp"-->
+            <!--            android:onClick="piecePlusBread"-->
+            <!--            android:text="+"-->
+            <!--            android:textAlignment="gravity"-->
+            <!--            app:cornerRadius="30dp"-->
+            <!--            app:layout_column="1"-->
+            <!--            app:layout_row="5" />-->
+
+            <!--        <Button-->
+            <!--            android:id="@+id/buttonBreadMinus"-->
+            <!--            android:layout_width="38dp"-->
+            <!--            android:layout_height="45dp"-->
+            <!--            android:layout_marginLeft="72dp"-->
+            <!--            android:onClick="pieceMinusBread"-->
+            <!--            android:text="-"-->
+            <!--            app:cornerRadius="30dp"-->
+            <!--            app:layout_column="1"-->
+            <!--            app:layout_row="5" />-->
+
+            <!--        <TextView-->
+            <!--            android:id="@+id/textViewBread"-->
+            <!--            android:layout_width="wrap_content"-->
+            <!--            android:layout_height="wrap_content"-->
+            <!--            android:layout_marginLeft="115dp"-->
+            <!--            android:layout_marginTop="-5dp"-->
+            <!--            android:text="Ekmek"-->
+            <!--            android:textColor="#3C3B3B"-->
+            <!--            android:textStyle="bold"-->
+            <!--            app:layout_column="1"-->
+            <!--            app:layout_row="5" />-->
+
+            <!--        <TextView-->
+            <!--            android:id="@+id/textViewBreadCal"-->
+            <!--            android:layout_width="wrap_content"-->
+            <!--            android:layout_height="wrap_content"-->
+            <!--            android:layout_marginLeft="115dp"-->
+            <!--            android:layout_marginTop="10dp"-->
+            <!--            android:text="64 Kalori"-->
+            <!--            android:textSize="11dp"-->
+            <!--            android:textStyle="italic"-->
+            <!--            app:layout_column="1"-->
+            <!--            app:layout_row="5" />-->
+
+            <!--        <TextView-->
+            <!--            android:id="@+id/textViewBreadPiece"-->
+            <!--            android:layout_width="wrap_content"-->
+            <!--            android:layout_height="wrap_content"-->
+            <!--            android:layout_marginLeft="8dp"-->
+            <!--            android:text=""-->
+            <!--            android:textColor="#716B6B"-->
+            <!--            android:textStyle="bold|italic"-->
+            <!--            app:layout_column="2"-->
+            <!--            app:layout_row="5" />-->
+
+            <TextView
+                android:id="@+id/textViewBread"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-condensed"
+                android:text="Ekmek"
+                android:textColor="#373232"
+                android:textSize="17sp"
+                android:textStyle="bold"
+                app:layout_column="0"
+                app:layout_row="8"
+                android:paddingTop="10dp"
+
+                />
+
+            <Button
+                android:id="@+id/buttonBreadPlus"
+                android:layout_width="38dp"
+                android:layout_height="wrap_content"
+                android:onClick="piecePlusBread"
+                android:text="+"
+                android:layout_marginLeft="160dp"
+                android:textAlignment="gravity"
+                app:cornerRadius="30dp"
+                app:layout_column="0"
+                app:layout_row="9" />
+
+            <Button
+                android:id="@+id/buttonBreadMinus"
+                android:layout_width="38dp"
+                android:layout_height="45dp"
+                android:layout_marginLeft="200dp"
+                android:onClick="pieceMinusBread"
+                android:text="-"
+                app:cornerRadius="30dp"
+                app:layout_column="0"
+                app:layout_row="9" />
+
+            <TextView
+                android:id="@+id/textViewBreadCal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="9dp"
+                android:layout_marginTop="0dp"
+                android:text="77 Kalori"
+                android:textSize="12dp"
+                android:textStyle="italic"
+                app:layout_column="0"
+                app:layout_row="9" />
+
+            <TextView
+                android:id="@+id/textViewBreadPiece"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:text=""
+                android:textColor="#716B6B"
+                android:textStyle="bold|italic"
+                app:layout_column="1"
+                app:layout_row="9" />
+
+            <TextView
+                android:id="@+id/textBreadPortion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:text="Dilim"
+                android:textColor="#716B6B"
+                android:textStyle="bold|italic"
+                app:layout_column="2"
+                app:layout_row="9" />
+
+
+
+
+        </androidx.gridlayout.widget.GridLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:paddingTop="15dp"
+            app:layout_constraintTop_toBottomOf="@+id/gridLayout3">
+
+            <Button
+                android:id="@+id/buttonCalorieCalculator"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:onClick="calorieCalculator"
+                android:text="Hesapla" />
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Bugün Aldığınız / Günlük Almanız Gereken Kalori Miktarı:"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:textAlignment="center"
+                android:paddingTop="10dp"
+                android:textSize="15dp"
+                android:textStyle="bold"
+                />
+
+            <TextView
+                android:id="@+id/textViewFinalCalories"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="10dp"
+                android:text=""
+                android:textAlignment="center"
+                android:textColor="#433F3F"
+
+                android:textSize="30dp" />
+            
+            <com.github.mikephil.charting.charts.PieChart
+                android:id="@+id/calorie_calculator_Piechart"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:layout_marginTop="30dp"
+                />
+
+        </LinearLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
+

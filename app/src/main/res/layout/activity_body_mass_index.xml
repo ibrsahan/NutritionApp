@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".BodyMassIndex"
+    >
+
+    <androidx.gridlayout.widget.GridLayout
+        android:id="@+id/gridLayout"
+        android:layout_width="389dp"
+        android:layout_height="351dp"
+        android:layout_rowSpan="0"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.473"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints">
+
+
+        <TextView
+            android:id="@+id/height"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="30dp"
+            android:fontFamily="sans-serif-thin"
+            android:text="Boy:"
+            android:textColor="#605A5A"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_column="0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_row="2" />
+
+        <TextView
+            android:id="@+id/weightLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="13dp"
+            android:fontFamily="sans-serif-thin"
+            android:text="Kilo:"
+            android:textColor="#605A5A"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_column="0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_row="3" />
+
+        <TextView
+            android:id="@+id/ageLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="13dp"
+            android:fontFamily="sans-serif-thin"
+            android:text="Yaş:"
+            android:textColor="#605A5A"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_column="0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_row="4" />
+
+        <TextView
+            android:id="@+id/genderLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="13dp"
+            android:fontFamily="sans-serif-thin"
+            android:text="Cinsiyet:"
+            android:textColor="#605A5A"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_column="0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_row="5" />
+
+        <TextView
+            android:id="@+id/activityLevelLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="13dp"
+            android:fontFamily="sans-serif-thin"
+            android:text="Aktivite Seviyesi:"
+            android:textColor="#605A5A"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_column="0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_row="6" />
+
+        <TextView
+            android:id="@+id/header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="20dp"
+            android:text="Vucüt Kitle İndeksi"
+            android:textColor="#3C3838"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_column="0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_row="0" />
+
+        <TextView
+            android:id="@+id/explanation"
+            android:layout_width="165dp"
+            android:layout_height="33dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:text="Lütfen bilgilerinizi eksiksiz olarak doldurunuz."
+            app:layout_column="0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_row="1" />
+
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="151dp"
+            android:layout_height="91dp"
+            android:layout_marginLeft="25dp"
+            android:src="@drawable/bmisp1"
+            app:layout_column="1"
+            app:layout_row="0"
+            app:layout_rowSpan="0" />
+
+        <EditText
+            android:id="@+id/heightInput"
+            android:layout_width="136dp"
+            android:layout_height="37dp"
+            android:layout_marginLeft="35dp"
+            android:layout_marginTop="32dp"
+            android:ems="10"
+            android:hint="Ör: 170"
+            android:inputType="number"
+            android:textSize="14sp"
+            app:layout_column="1"
+            app:layout_row="2" />
+
+        <EditText
+            android:id="@+id/weightInput"
+            android:layout_width="132dp"
+            android:layout_height="37dp"
+            android:layout_marginLeft="35dp"
+            android:layout_marginTop="14dp"
+            android:ems="10"
+            android:hint="Ör: 55"
+            android:inputType="number"
+            android:textSize="14sp"
+            app:layout_column="1"
+            app:layout_row="3" />
+
+        <EditText
+            android:id="@+id/ageInput"
+            android:layout_width="132dp"
+            android:layout_height="37dp"
+            android:layout_marginLeft="35dp"
+            android:layout_marginTop="14dp"
+            android:ems="10"
+            android:hint="Ör: 22"
+            android:inputType="number"
+            android:textSize="14sp"
+            app:layout_column="1"
+            app:layout_row="4" />
+
+        <RadioGroup
+            android:id="@+id/radioGroupGender"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="8dp"
+            android:orientation="horizontal"
+            app:layout_column="1"
+            app:layout_gravity="center"
+            app:layout_row="5">
+
+            <RadioButton
+                android:id="@+id/radioButtonMale"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Erkek"
+                app:layout_column="1"
+                app:layout_row="5" />
+
+            <RadioButton
+                android:id="@+id/radioButtonFemale"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Kadın"
+                app:layout_column="1"
+                app:layout_row="5" />
+
+        </RadioGroup>
+
+        <RadioGroup
+            android:id="@+id/radioGroupActivityLevel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_column="1"
+            app:layout_gravity="center"
+            app:layout_row="6">
+
+            <RadioButton
+                android:id="@+id/radioButtonLow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Az"
+                app:layout_column="1"
+                app:layout_row="6" />
+
+            <RadioButton
+                android:id="@+id/radioButtonMedium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Orta"
+                app:layout_column="1"
+                app:layout_row="6" />
+
+            <RadioButton
+                android:id="@+id/radioButtonHigh"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Çok"
+                app:layout_column="1"
+                app:layout_row="6" />
+
+        </RadioGroup>
+
+
+    </androidx.gridlayout.widget.GridLayout>
+
+    <LinearLayout
+        android:layout_width="409dp"
+        android:layout_height="234dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints">
+
+        <Button
+            android:id="@+id/buttonBmiCalculate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="4dp"
+            android:onClick="bmiCalculator"
+            android:text="Hesapla"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/bmiShow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="8dp"
+            android:text="Vücut Kitle İndeksiniz:"
+            android:textAlignment="center"
+            android:textSize="20sp"
+
+            />
+
+        <TextView
+            android:id="@+id/bmiValueExplanation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textAlignment="center"
+            android:textColor="#4E4A4A"
+            android:textSize="60sp" />
+
+        <TextView
+            android:id="@+id/bmiExplanation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textAlignment="center"
+            android:textColor="#673AB7"
+            android:textSize="28sp"
+            android:textStyle="bold" />
+
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

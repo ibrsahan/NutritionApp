@@ -1,0 +1,40 @@
+<resources>
+    <string name="app_name">NutritionApp</string>
+
+    <string-array name="SoapOptions">
+        <item>Tarhana</item>
+        <item>Mercimek</item>
+        <item>Domates</item>
+        <item>Ezogelin</item>
+        <item>Yayla</item>
+    </string-array>
+
+    <string-array name="MainCourseOptions">
+        <item>Tavuk Sote</item>
+        <item>Mantı</item>
+        <item>Köfte</item>
+        <item>Türlü</item>
+        <item>Makarna</item>
+        <item>Burger</item>
+    </string-array>
+
+    <string-array name="DessertOptions">
+        <item>Profiterol</item>
+        <item>Sütlaç</item>
+        <item>Sufle</item>
+        <item>Dondurma</item>
+        <item>Triliçe</item>
+        <item>Puding</item>
+    </string-array>
+
+    <string-array name="DrinkOptions">
+        <item>Ayran</item>
+        <item>Şalgam</item>
+        <item>Gazoz</item>
+        <item>Kola</item>
+        <item>Çay</item>
+    </string-array>
+
+</resources>
+
+
