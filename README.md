@@ -21,4 +21,4 @@ This is a mobile app that helps users to calculate their body mass index (BMI) a
  <img src="https://user-images.githubusercontent.com/121201456/220619427-97c9ac52-bd82-4f87-9382-b611ced2cf36.jpg" height="600"> <img src="https://user-images.githubusercontent.com/121201456/220619622-c1b28bbb-acc4-42cb-8f87-bd4d79f6b30a.jpg" height="600"> <img src="https://user-images.githubusercontent.com/121201456/220619627-bba9786c-1483-4bd6-bbee-e33ee349943d.jpg" height="600">
  <img src="https://user-images.githubusercontent.com/121201456/220619630-a55acc16-b755-4683-8380-428e8edc4f2e.jpg" height="600"> <img src="https://user-images.githubusercontent.com/121201456/220619632-3ce1bddb-7af8-4e75-8cc2-d17248348230.jpg" height="600"> <img src="https://user-images.githubusercontent.com/121201456/220619609-ba990469-8923-4076-baa0-5abc95e972a1.jpg" height="600">
 
-### This project was created for practicing web development skills. Feel free to use it as a learning resource or a starting point for your own projects.
+### This project was created for practicing mobile development skills. Feel free to use it as a learning resource or a starting point for your own projects.
